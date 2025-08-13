@@ -44,3 +44,10 @@
             .domainId}/screenshot.png"
     />
 </main>
+
+<style>
+    img {
+        width: 100vw;
+        max-width: 1000px;
+    }
+</style>
