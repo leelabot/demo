@@ -33,9 +33,11 @@ export async function loadChat(domain) {
 
         document.head.appendChild(script);
         console.log("Chat script loaded successfully.");
+        return script;
 
     } catch (error) {
         console.error("Failed to fetch siteId or load chat:", error);
         console.log(`Failed to initialize chat: ${error.message}. Please check the domain and try again.`);
+        return null;
     }
 }
