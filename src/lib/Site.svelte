@@ -54,9 +54,11 @@
     }
 </script>
 
-<main class="min-vh-100 d-flex justify-content-center align-items-center">
-    {#if chatError || imageError}
-        <div class="error-message text-center">
+<main
+    class="min-vh-100 d-flex flex-column justify-content-center align-items-center"
+>
+    {#if chatError}
+        <div class="error-message text-center mb-4">
             <div class="alert alert-danger" role="alert">
                 <h4 class="alert-heading">Error Loading Chat</h4>
                 <p>
@@ -74,12 +76,15 @@
                 </div>
             </div>
         </div>
-    {:else}
+    {/if}
+
+    {#if !imageError}
         <img
             src="https://cube.leelabot.net/mirrors/{route.params
                 .domainId}/screenshot.png"
             on:error={handleImageError}
             alt="Screenshot for {route.params.domainId}"
+            class={chatError ? "img-with-error" : ""}
         />
     {/if}
 </main>

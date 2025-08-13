@@ -29,19 +29,21 @@ export async function loadChat(domain) {
         return new Promise((resolve, reject) => {
             script.onload = () => {
                 console.log("Chat script loaded successfully.");
-                document.head.appendChild(script);
                 resolve(script);
             };
 
             script.onerror = () => {
                 console.error("Failed to load the chatbot script.");
                 console.log("Failed to load the chatbot. Please check the domain and try again.");
-                // Don't embed the script if it fails to load
+                // Remove the script if it fails to load
+                if (script.parentNode) {
+                    script.parentNode.removeChild(script);
+                }
                 reject(new Error("Failed to load chatbot script"));
             };
 
-            // Start loading the script
-            script.src = scriptUrl;
+            // Add script to DOM first, then it will start loading and trigger onload/onerror
+            document.head.appendChild(script);
         });
 
     } catch (error) {
