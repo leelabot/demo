@@ -10,7 +10,5 @@ export default defineConfig({
   // Add this for SPA fallback in development
   preview: {
     port: 4173
-  },
-  // Ensure proper base path for SPA
-  base: './'
+  }
 })
