@@ -4,7 +4,7 @@
 export async function loadChat(domain) {
 
 
-    const apiUrl = `https://dev.leelabot.net/api/domain/${domain}`;
+    const apiUrl = `https://dashboard.leelabot.net/api/domain/${domain}`;
     let siteId;
 
     try {
@@ -21,7 +21,7 @@ export async function loadChat(domain) {
             throw new Error("siteId not found in API response.");
         }
 
-        const scriptUrl = `https://dev.leelabot.net/embed.js?id=${siteId}&theme=light`;
+        const scriptUrl = `https://dashboard.leelabot.net/embed.js?id=${siteId}&theme=light`;
         const script = document.createElement("script");
         script.src = scriptUrl;
         script.async = true;

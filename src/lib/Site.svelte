@@ -9,10 +9,14 @@
         console.log("mounting chat");
         if (route.params.domainId) {
             loadChat(route.params.domainId);
+            console.log(route.params.domainId);
         }
     });
 </script>
 
 <main class=" min-vh-100 d-flex justify-content-center align-items-center">
-    <img src="https://cube.leelabot.net/mirrors/bluedogsf_com/screenshot.png" />
+    <img
+        src="https://cube.leelabot.net/mirrors/{route.params
+            .domainId}/screenshot.png"
+    />
 </main>
