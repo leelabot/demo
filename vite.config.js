@@ -5,6 +5,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte()],
   server: {
-    allowedHosts: ['dev-demo.leelabot.net']
+    allowedHosts: ['dev-demo.leelabot.net', 'demo.leelabot.net'],
+
   }
 })
