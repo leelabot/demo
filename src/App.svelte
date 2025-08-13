@@ -7,8 +7,8 @@
 </script>
 
 <main class=" min-vh-100 d-flex justify-content-center align-items-center">
-    <!-- Route for the home page (domain input) -->
-    <Route let path="/">
+    <!-- Route for the home page (domain input) - EXACT match only -->
+    <Route path="/">
         <Home />
     </Route>
 
