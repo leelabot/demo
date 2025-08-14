@@ -1,5 +1,5 @@
 <script>
-    let domain = "bluedogsf.com";
+    let domain = "";
     import { router } from "tinro";
 
     // Check for domainId query parameter on component mount only
@@ -32,7 +32,13 @@
         isSubmitting = true;
 
         try {
-            const sanitizedDomain = domain.trim().replace(/\./g, "_");
+            let processedDomain = domain
+                .trim()
+                .toLowerCase()
+                .replace(/^https?:\/\//, "") // Remove http:// or https://
+                .replace(/^www\./, "") // Remove www.
+                .replace(/\/$/, ""); // Remove trailing slash if any
+            const sanitizedDomain = processedDomain.replace(/\./g, "_");
             await router.goto(`/site/${sanitizedDomain}`);
         } catch (error) {
             console.error("Navigation error:", error);
@@ -56,7 +62,7 @@
         <input
             type="text"
             bind:value={domain}
-            placeholder="www.example.com"
+            placeholder="www.yoursite.com"
             on:keypress={handleKeyPress}
             class="form-control"
         />
