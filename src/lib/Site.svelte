@@ -81,7 +81,7 @@
     {#if !imageError}
         <img
             src="https://cube.leelabot.net/mirrors/{route.params
-                .domainId}/screenshot.png"
+                .domainId}/screenshot.jpeg"
             on:error={handleImageError}
             alt="Screenshot for {route.params.domainId}"
             class={chatError ? "img-with-error" : ""}
