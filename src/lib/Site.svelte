@@ -84,7 +84,7 @@
                 .domainId}/screenshot.jpeg"
             on:error={handleImageError}
             alt="Screenshot for {route.params.domainId}"
-            class={chatError ? "img-with-error" : ""}
+            class="p-4"
         />
     {/if}
 </main>
