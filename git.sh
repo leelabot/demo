@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Add changes
 git add ./
@@ -13,5 +13,3 @@ fi
 git commit -m "whee"
 git push
 
-# # Deploy with vercel
-# vercel --prod
