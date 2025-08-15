@@ -78,7 +78,7 @@
         </div>
     {/if}
 
-    {#if !imageError}
+    {#if !imageError && !chatError}
         <img
             src="https://cube.leelabot.net/mirrors/{route.params
                 .domainId}/screenshot.jpeg"
